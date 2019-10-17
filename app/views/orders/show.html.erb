@@ -11,7 +11,7 @@
 
     <% @order.line_items.each do |item| %>
 
-      <%= render 'item', product_image: item.product.image, product_name: item.product.name, product_description: item.product.description, product_price: (item.item_price_cents.to_f / 100), quantity: item.product.quantity, total_price: (item.total_price_cents.to_f / 100) %>
+      <%= render 'item', product_image: item.product.image, product_name: item.product.name, product_description: item.product.description, product_price: (item.item_price_cents.to_f / 100), quantity: item.quantity, total_price: (item.total_price_cents.to_f / 100) %>
 
     <% end %>
 
