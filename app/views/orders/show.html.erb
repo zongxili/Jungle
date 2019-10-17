@@ -7,18 +7,13 @@
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
 
-    <% @order %>
+    <table class="table table-bordered"> 
+    <%= render @order.line_items %>
+    </table>
 
-    <% @order.line_items.each do |item| %>
+    <p>Total: <%= humanized_money_with_symbol (@order.total_cents.to_f / 100) %></p>
 
-      <%= render 'item', product_image: item.product.image, product_name: item.product.name, product_description: item.product.description, product_price: (item.item_price_cents.to_f / 100), quantity: item.quantity, total_price: (item.total_price_cents.to_f / 100) %>
-
-    <% end %>
-
-    <%= @order.email %>
-
-    <%= humanized_money_with_symbol (@order.total_cents.to_f / 100) %>
-
+    <p>Email used: <%= @order.email %></p>
 
   </div>
 
