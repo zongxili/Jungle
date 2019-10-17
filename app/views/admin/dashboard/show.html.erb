@@ -2,11 +2,10 @@
 
 <p>Find me in app/views/admin/dashboard/show.html.erb</p>
 
-<%= Product.all.count%>
+<p>Total number of products: <var><%= Product.all.count%></var></p>
 
 <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
 
-<%= Category.all.count%>
+<p>Total number of categories: <var><%= Category.all.count%></var></p>
 
-<%= link_to 'Categories', [:admin, :categories], class: 'btn btn-info' %>
-
+<%= link_to 'All Categories', class: 'btn btn-info' %>

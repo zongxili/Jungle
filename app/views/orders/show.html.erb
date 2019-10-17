@@ -6,12 +6,14 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
+
     <table class="table table-bordered"> 
     <%= render @order.line_items %>
     </table>
 
-    <%= humanized_money_with_symbol (@order.total_cents.to_f / 100) %>
+    <p>Total: <%= humanized_money_with_symbol (@order.total_cents.to_f / 100) %></p>
 
+    <p>Email used: <%= @order.email %></p>
 
   </div>
 
