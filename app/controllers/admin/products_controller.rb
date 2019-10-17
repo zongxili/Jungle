@@ -1,11 +1,11 @@
-class Admin::ProductsController < ApplicationController
+class Admin::sController < ApplicationController
 
   def index
     @products = Product.order(id: :desc).all
   end
 
   def new
-    @product = Product.new
+    @product = .new
   end
 
   def create

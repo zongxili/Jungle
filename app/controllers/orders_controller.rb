@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    # raise enhanced_cart.inspect
+    # @productArr = @order.line_items
   end
 
   def create
@@ -41,7 +43,7 @@ class OrdersController < ApplicationController
       total_cents: cart_subtotal_cents,
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )
-
+    # raise enhanced_cart.inspect
     enhanced_cart.each do |entry|
       product = entry[:product]
       quantity = entry[:quantity]

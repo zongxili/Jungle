@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-
-  resources :myblogs
+  
   # controller: product
   # action: index
   # another way to write this:
