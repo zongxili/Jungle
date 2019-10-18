@@ -1,18 +1,17 @@
 <h1>Signup!</h1>
 
+<% if flash[:error] != nil %>
+<div class="alert alert-danger">
+  <%= flash[:error] %>
+</div>
+<% end %>
+
 <%= form_for :user, url: '/users' do |f| %>
   <p>First Name: <%= f.text_field :first_name %></p>
   <p>Last Name: <%= f.text_field :last_name %></p>
   <p>Email: <%= f.text_field :email %></p>
-
-  <% if flash[:error] != nil %>
-    <div class="alert alert-danger">
-      <%= flash[:error] %>
-    </div>
-  <% end %>
-  
   <p>Password: <%= f.password_field :password %></p>
   <p>Password Confirmation: <%= f.password_field :password_confirmation %></p>
-  <%= f.submit "Submit" %>
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 <% end %>
