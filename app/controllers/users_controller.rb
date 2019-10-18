@@ -9,9 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      # redirect_to '/signup', :flash => {:error => "different password"}
-      # flash.now[:error] = "alert for password"
-      redirect_to '/signup', :flash => { :error => "Insufficient rights!" }
+      redirect_to '/signup', :flash => { :error => "You entered something wrong here and Please make sure you enter all the fields currently" }
     end
   end
 
